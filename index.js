@@ -3,22 +3,24 @@ const express = require('express')
  const bodyparser = require('body-parser');
  app.use(bodyparser.json());
  const users =[
-   
-   {
-     "id":1,
-    "emailId":"leela1@mail.com",
-    "location":"Hyderabad"
-   },
-   {
-    "id":2,
-    "emailId":"leeladurga2@gmail.com",
-    "location":"london"
-   },
-   {
-    "id":3,
-    "emailId":"leela3@gmail.com",
-    "location":"europe"
-   } 
+    fetch('https://fakestoreapi.com/products')
+    .then(res=>res.json())
+    .then(json=>console.log(json)) 
+//    {
+//      "id":1,
+//     "emailId":"leela1@mail.com",
+//     "location":"Hyderabad"
+//    },
+//    {
+//     "id":2,
+//     "emailId":"leeladurga2@gmail.com",
+//     "location":"london"
+//    },
+//    {
+//     "id":3,
+//     "emailId":"leela3@gmail.com",
+//     "location":"europe"
+//    } 
 ]
 app.get('/',(req,res)=>{
     res.send("welcome to our webdevelopment");
@@ -94,6 +96,6 @@ else{
 })
 
 
-app.listen(5500,()=>{
-    console.log("server is up and running at http://localhost:5500 ");
+app.listen(5700,()=>{
+    console.log("server is up and running at http://localhost:5700 ");
 })
